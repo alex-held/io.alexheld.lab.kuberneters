@@ -1,0 +1,40 @@
+apiVersion: v1
+data:
+  _global: '{"clusterName":"local-kube","itemsPerPage":50,"logsAutoRefreshTimeInterval":2,"resourceAutoRefreshTimeInterval":5}'
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"_global":"{\"clusterName\":\"local-kube\",\"itemsPerPage\":50,\"logsAutoRefreshTimeInterval\":2,\"resourceAutoRefreshTimeInterval\":5}"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":null,"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}},"f:labels":{".":{},"f:addonmanager.kubernetes.io/mode":{},"f:k8s-app":{},"f:kubernetes.io/minikube-addons":{}}}},"manager":"kubectl","operation":"Update","time":"2020-05-01T10:44:20Z"},{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:data":{".":{},"f:_global":{}}},"manager":"dashboard","operation":"Update","time":"2020-05-01T13:28:27Z"}],"name":"kubernetes-dashboard-settings","namespace":"kubernetes-dashboard","selfLink":"/api/v1/namespaces/kubernetes-dashboard/configmaps/kubernetes-dashboard-settings"}}
+  creationTimestamp: null
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    k8s-app: kubernetes-dashboard
+    kubernetes.io/minikube-addons: dashboard
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:addonmanager.kubernetes.io/mode: {}
+          f:k8s-app: {}
+          f:kubernetes.io/minikube-addons: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-05-01T10:44:20Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:_global: {}
+    manager: dashboard
+    operation: Update
+    time: "2020-05-01T13:28:27Z"
+  name: kubernetes-dashboard-settings
+  selfLink: /api/v1/namespaces/kubernetes-dashboard/configmaps/kubernetes-dashboard-settings

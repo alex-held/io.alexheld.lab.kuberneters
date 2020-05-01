@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"creationTimestamp":null,"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","kubernetes.io/minikube-addons":"registry"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}},"f:labels":{".":{},"f:addonmanager.kubernetes.io/mode":{},"f:kubernetes.io/minikube-addons":{}}},"f:spec":{"f:ports":{".":{},"k:{\"port\":80,\"protocol\":\"TCP\"}":{".":{},"f:port":{},"f:protocol":{},"f:targetPort":{}}},"f:selector":{".":{},"f:actual-registry":{},"f:kubernetes.io/minikube-addons":{}},"f:sessionAffinity":{},"f:type":{}}},"manager":"kubectl","operation":"Update","time":"2020-05-01T14:24:53Z"}],"name":"registry","namespace":"kube-system","selfLink":"/api/v1/namespaces/kube-system/services/registry"},"spec":{"ports":[{"port":80,"protocol":"TCP","targetPort":5000}],"selector":{"actual-registry":"true","kubernetes.io/minikube-addons":"registry"},"sessionAffinity":"None","type":"ClusterIP"},"status":{"loadBalancer":{}}}
+  creationTimestamp: null
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    kubernetes.io/minikube-addons: registry
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:addonmanager.kubernetes.io/mode: {}
+          f:kubernetes.io/minikube-addons: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:actual-registry: {}
+          f:kubernetes.io/minikube-addons: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-05-01T14:24:53Z"
+  name: registry
+  selfLink: /api/v1/namespaces/kube-system/services/registry
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    actual-registry: "true"
+    kubernetes.io/minikube-addons: registry
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
