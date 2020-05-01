@@ -1,0 +1,60 @@
+apiVersion: v1
+data:
+  ClusterConfiguration: |
+    apiServer:
+      certSANs:
+      - 127.0.0.1
+      - localhost
+      - local.kube
+      - 192.168.99.106
+      extraArgs:
+        authorization-mode: Node,RBAC
+        enable-admission-plugins: NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota
+      timeoutForControlPlane: 4m0s
+    apiVersion: kubeadm.k8s.io/v1beta2
+    certificatesDir: /var/lib/minikube/certs
+    clusterName: mk
+    controlPlaneEndpoint: 192.168.99.106:8443
+    controllerManager: {}
+    dns:
+      type: CoreDNS
+    etcd:
+      local:
+        dataDir: /var/lib/minikube/etcd
+    imageRepository: k8s.gcr.io
+    kind: ClusterConfiguration
+    kubernetesVersion: v1.18.0
+    networking:
+      dnsDomain: cluster.local
+      serviceSubnet: 10.96.0.0/12
+    scheduler: {}
+  ClusterStatus: |
+    apiEndpoints:
+      minikube:
+        advertiseAddress: 192.168.99.106
+        bindPort: 8443
+    apiVersion: kubeadm.k8s.io/v1beta2
+    kind: ClusterStatus
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:ClusterStatus: {}
+    manager: kubeadm
+    operation: Update
+    time: "2020-05-01T10:44:04Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        f:ClusterConfiguration: {}
+    manager: dashboard
+    operation: Update
+    time: "2020-05-01T13:06:41Z"
+  name: kubeadm-config
+  selfLink: /api/v1/namespaces/kube-system/configmaps/kubeadm-config

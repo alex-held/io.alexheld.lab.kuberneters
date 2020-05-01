@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"addonmanager.kubernetes.io/mode":"Reconcile","k8s-app":"kubernetes-dashboard","kubernetes.io/minikube-addons":"dashboard"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}},"f:labels":{".":{},"f:addonmanager.kubernetes.io/mode":{},"f:k8s-app":{},"f:kubernetes.io/minikube-addons":{}}},"f:spec":{"f:ports":{".":{},"k:{\"port\":80,\"protocol\":\"TCP\"}":{".":{},"f:port":{},"f:protocol":{},"f:targetPort":{}}},"f:selector":{".":{},"f:k8s-app":{}},"f:sessionAffinity":{},"f:type":{}}},"manager":"kubectl","operation":"Update","time":"2020-05-01T10:44:20Z"}],"name":"kubernetes-dashboard","namespace":"kubernetes-dashboard","resourceVersion":"476"},"spec":{"clusterIP":"10.102.205.13","ports":[{"port":80,"protocol":"TCP","targetPort":9090}],"selector":{"k8s-app":"kubernetes-dashboard"},"sessionAffinity":"None","type":"NodePort"},"status":{"loadBalancer":{}}}
+  creationTimestamp: null
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    k8s-app: kubernetes-dashboard
+    kubernetes.io/minikube-addons: dashboard
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:addonmanager.kubernetes.io/mode: {}
+          f:k8s-app: {}
+          f:kubernetes.io/minikube-addons: {}
+      f:spec:
+        f:externalTrafficPolicy: {}
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:k8s-app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-05-01T15:00:17Z"
+  name: kubernetes-dashboard
+  selfLink: /api/v1/namespaces/kubernetes-dashboard/services/kubernetes-dashboard
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    k8s-app: kubernetes-dashboard
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
