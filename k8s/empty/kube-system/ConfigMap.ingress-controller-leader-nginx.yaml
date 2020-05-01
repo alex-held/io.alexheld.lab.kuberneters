@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  annotations:
+    control-plane.alpha.kubernetes.io/leader: '{"holderIdentity":"nginx-ingress-controller-6d57c87cb9-vsngx","leaseDurationSeconds":30,"acquireTime":"2020-05-01T14:23:25Z","renewTime":"2020-05-01T16:35:39Z","leaderTransitions":0}'
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{"control-plane.alpha.kubernetes.io/leader":"{\"holderIdentity\":\"nginx-ingress-controller-6d57c87cb9-vsngx\",\"leaseDurationSeconds\":30,\"acquireTime\":\"2020-05-01T14:23:25Z\",\"renewTime\":\"2020-05-01T16:35:39Z\",\"leaderTransitions\":0}"},"creationTimestamp":null,"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:control-plane.alpha.kubernetes.io/leader":{}}}},"manager":"nginx-ingress-controller","operation":"Update","time":"2020-05-01T16:35:39Z"}],"name":"ingress-controller-leader-nginx","namespace":"kube-system","selfLink":"/api/v1/namespaces/kube-system/configmaps/ingress-controller-leader-nginx"}}
+  creationTimestamp: null
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:control-plane.alpha.kubernetes.io/leader: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-05-01T16:38:52Z"
+  name: ingress-controller-leader-nginx
+  selfLink: /api/v1/namespaces/kube-system/configmaps/ingress-controller-leader-nginx

@@ -1,0 +1,32 @@
+apiVersion: v1
+data:
+  hsts: "false"
+  map-hash-bucket-size: "128"
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"hsts":"false","map-hash-bucket-size":"128"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":null,"labels":{"addonmanager.kubernetes.io/mode":"EnsureExists"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:data":{".":{},"f:hsts":{},"f:map-hash-bucket-size":{}},"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}},"f:labels":{".":{},"f:addonmanager.kubernetes.io/mode":{}}}},"manager":"kubectl","operation":"Update","time":"2020-05-01T14:22:33Z"}],"name":"nginx-load-balancer-conf","namespace":"kube-system","selfLink":"/api/v1/namespaces/kube-system/configmaps/nginx-load-balancer-conf"}}
+  creationTimestamp: null
+  labels:
+    addonmanager.kubernetes.io/mode: EnsureExists
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:hsts: {}
+        f:map-hash-bucket-size: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:addonmanager.kubernetes.io/mode: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-05-01T16:38:52Z"
+  name: nginx-load-balancer-conf
+  selfLink: /api/v1/namespaces/kube-system/configmaps/nginx-load-balancer-conf

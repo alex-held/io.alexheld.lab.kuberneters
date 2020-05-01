@@ -1,0 +1,66 @@
+apiVersion: v1
+data:
+  ClusterConfiguration: |
+    apiServer:
+      certSANs:
+      - 127.0.0.1
+      - localhost
+      - local.kube
+      - 192.168.99.106
+      extraArgs:
+        authorization-mode: Node,RBAC
+        enable-admission-plugins: NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota
+      timeoutForControlPlane: 4m0s
+    apiVersion: kubeadm.k8s.io/v1beta2
+    certificatesDir: /var/lib/minikube/certs
+    clusterName: mk
+    controlPlaneEndpoint: 192.168.99.106:8443
+    controllerManager: {}
+    dns:
+      type: CoreDNS
+    etcd:
+      local:
+        dataDir: /var/lib/minikube/etcd
+    imageRepository: k8s.gcr.io
+    kind: ClusterConfiguration
+    kubernetesVersion: v1.18.0
+    networking:
+      dnsDomain: cluster.local
+      serviceSubnet: 10.96.0.0/12
+    scheduler: {}
+  ClusterStatus: |
+    apiEndpoints:
+      minikube:
+        advertiseAddress: 192.168.99.106
+        bindPort: 8443
+    apiVersion: kubeadm.k8s.io/v1beta2
+    kind: ClusterStatus
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"ClusterConfiguration":"apiServer:\n  certSANs:\n  - 127.0.0.1\n  - localhost\n  - local.kube\n  - 192.168.99.106\n  extraArgs:\n    authorization-mode: Node,RBAC\n    enable-admission-plugins: NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota\n  timeoutForControlPlane: 4m0s\napiVersion: kubeadm.k8s.io/v1beta2\ncertificatesDir: /var/lib/minikube/certs\nclusterName: mk\ncontrolPlaneEndpoint: 192.168.99.106:8443\ncontrollerManager: {}\ndns:\n  type: CoreDNS\netcd:\n  local:\n    dataDir: /var/lib/minikube/etcd\nimageRepository: k8s.gcr.io\nkind: ClusterConfiguration\nkubernetesVersion: v1.18.0\nnetworking:\n  dnsDomain: cluster.local\n  serviceSubnet: 10.96.0.0/12\nscheduler: {}\n","ClusterStatus":"apiEndpoints:\n  minikube:\n    advertiseAddress: 192.168.99.106\n    bindPort: 8443\napiVersion: kubeadm.k8s.io/v1beta2\nkind: ClusterStatus\n"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":null,"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:data":{".":{},"f:ClusterStatus":{}}},"manager":"kubeadm","operation":"Update","time":"2020-05-01T10:44:04Z"},{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:data":{"f:ClusterConfiguration":{}}},"manager":"dashboard","operation":"Update","time":"2020-05-01T13:06:41Z"}],"name":"kubeadm-config","namespace":"kube-system","selfLink":"/api/v1/namespaces/kube-system/configmaps/kubeadm-config"}}
+  creationTimestamp: null
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data: {}
+    manager: kubeadm
+    operation: Update
+    time: "2020-05-01T10:44:04Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        f:ClusterConfiguration: {}
+        f:ClusterStatus: {}
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-05-01T16:38:52Z"
+  name: kubeadm-config
+  selfLink: /api/v1/namespaces/kube-system/configmaps/kubeadm-config
